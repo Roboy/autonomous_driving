@@ -4,3 +4,4 @@
 # building catkin
 src/ceres-solver
 src/cartographer
+src/CMakeLists.txt
