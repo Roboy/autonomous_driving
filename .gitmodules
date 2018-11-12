@@ -1,9 +1,6 @@
 [submodule "src/sick_scan"]
 	path = src/sick_scan
 	url = https://github.com/SICKAG/sick_scan.git
-[submodule "src/cartographer_ros"]
-	path = src/cartographer_ros
-	url = https://github.com/googlecartographer/cartographer_ros.git
 [submodule "src/pointcloud_to_laserscan"]
 	path = src/pointcloud_to_laserscan
 	url = https://github.com/ros-perception/pointcloud_to_laserscan.git
