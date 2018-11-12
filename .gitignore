@@ -1,1 +1,6 @@
+#MISC
 .DS_Store
+
+# building catkin
+src/ceres-solver
+src/cartographer
