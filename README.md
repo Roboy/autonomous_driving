@@ -56,7 +56,7 @@ angle_increment: 0.002268928
 
 
 
-### RIVZ
+### RVIZ
 RVIZ (´$ rviz´) is the tool used for visualization
 Setup: Choose what you get, either a pointcloud (3d) or a laser scan (2D) and set fixed frame variable accordingly. 
 
