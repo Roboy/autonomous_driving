@@ -7,3 +7,6 @@
 [submodule "src/pointcloud_to_laserscan"]
 	path = src/pointcloud_to_laserscan
 	url = https://github.com/ros-perception/pointcloud_to_laserscan.git
+[submodule "src/geometry2"]
+	path = src/geometry2
+	url = https://github.com/ros/geometry2.git
