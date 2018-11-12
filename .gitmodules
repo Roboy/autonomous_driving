@@ -7,3 +7,6 @@
 [submodule "src/geometry2"]
 	path = src/geometry2
 	url = https://github.com/ros/geometry2.git
+[submodule "src/cartographer_ros"]
+	path = src/cartographer_ros
+	url = https://github.com/Roboy/cartographer_ros.git
