@@ -2,6 +2,11 @@
 .DS_Store
 
 # building catkin
+build/
+devel/
+logs/
+protobuf/
+get-pip.py
 src/ceres-solver
 src/cartographer
 src/CMakeLists.txt
