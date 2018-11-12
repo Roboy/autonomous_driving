@@ -24,7 +24,7 @@ The following packages are needed for getting a lidar to work
 - pointcloud_to_laserscan simulates 
 - geometry2
 
-**Before building go to submodule pointcloud_to_laserscan and swith branch to indigo-devel**
+**Before building go to submodules geometry2 and pointcloud_to_laserscan and swith branch to indigo-devel**
 
 #### sick_scan
 Source:
