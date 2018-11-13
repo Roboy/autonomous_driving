@@ -10,3 +10,6 @@
 [submodule "src/cartographer_ros"]
 	path = src/cartographer_ros
 	url = https://github.com/Roboy/cartographer_ros.git
+[submodule "autonomous_driving_src"]
+	path = autonomous_driving_src
+	url = https://github.com/Roboy/autonomous_driving_src.git
