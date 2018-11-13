@@ -10,10 +10,14 @@ The folder '/src' is intended to simply be cloned into the needed catkin workspa
 ### Rosbridge_suite
 Make sure you get [ROSbridge suite](http://wiki.ros.org/rosbridge_suite)'s kinetic version!
 
-### catkin tools
+### Catkin Tools
 [Catkin tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) for the use of catkin build.
 
-
+### Common Commands
+```
+rostopic list
+rostopic echo /fake/scan
+```
 
 ## Install
 The following packages are needed for getting a lidar to work
@@ -39,18 +43,20 @@ In case you run into issues building geometry2
 #### pointcloud to laserscan
 [Pointcloud_to_Laserscan](http://wiki.ros.org/pointcloud_to_laserscan) converts a 3D Point Cloud into a 2D laser scan. Make sure you get the version for kinetic when building (Switch branches!).
 
-
 Make sure you set the Params in the launch-file located at
-´´´
+```
 src/pointcloud_to_laserscan/launch/sample_node.launch
-´´´
+```
 accordingly. Especially, note to LIDAR-dependent set the parameters in lines 20 to 22 in radiants. 
-´´´
+```
 angle_min: -1.047
 angle_max: 1.047
 angle_increment: 0.002268928 
-´´´
-
+```
+launch running
+```
+roslaunch pointcloud_to_laserscan sample_node.launch
+```
 
 
 
@@ -62,23 +68,28 @@ Setup: Choose what you get, either a pointcloud (3d) or a laser scan (2D) and se
 ## Google Cartographer ROS
 follow instructions to install from [Google Cartographer ROS Docs](https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html) but do a catkin build in the last step. 
 
+Switch to `roboy`-branch.
+
 According files for Roboy are defined. To test with demo bag run:
 ```roslaunch cartographer_ros roboy_indoor.launch bag_filename:=${HOME}/Downloads/cartographer_paper_deutsches_museum.bag```
 
-### src/cartographer_ros/cartographer_ros/urdf
-`urdf`-files essentially define the physical configuration of the robot such as relative positions of different sensors. More can be found ´here ROS wiki urdf´
 
-### src/cartographer_ros/cartographer_ros/launch
+### Structure
+
+#### Launch Files
+- located at `src/cartographer_ros/cartographer_ros/launch`
 - add call for sickscan so we don't have to do it manually`. See here:
 ```https://github.com/SICKAG/sick_scan/issues/5```
 - adapt names to point to according urdf file
 
-
-
-### src/cartographer_ros/cartographer_ros/configuration
+#### Configuration Files
+- located at `src/cartographer_ros/cartographer_ros/configuration`
 - `.lua` files
 - compare dokumentation
 
+#### URDF Files
+- located at `src/cartographer_ros/cartographer_ros/urdf`
+`urdf`-files essentially define the physical configuration of the robot such as relative positions of different sensors. More can be found ´here ROS wiki urdf´
 
 # Hardware Setup
 
