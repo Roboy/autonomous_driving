@@ -13,10 +13,7 @@ Make sure you get [ROSbridge suite](http://wiki.ros.org/rosbridge_suite)'s kinet
 ### catkin tools
 [Catkin tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) for the use of catkin build.
 
-## LiDAR Setup
-After the stated packages have been build, connect the LIDAR to an appropriate power source (brown = positive -> red, blue = negative -> black) and an ethernet switch. You will need to connect your Laptop to that switch as well. 
 
-Hint for VM users: This guide was written based on experiences from a USB-C only MacBook running Ubuntu 16.04 in VMware Fusion. When connecting ethernet through a ethernet to USB-C adapter, mount the adapter to macOS, such that the connection is shown in the System Preferences of your host machine. Then, disconnect from any WiFi connections and the VM will switch to the wired connection. This lead to a plug-and-play setup of the LIDAR which can be double checked through calling the IP adress in a browser. 
 
 ## Install
 The following packages are needed for getting a lidar to work
@@ -28,7 +25,8 @@ The following packages are needed for getting a lidar to work
 
 #### sick_scan
 [Sick Scan](http://wiki.ros.org/sick_scan) is the ROS-package provided by the manufacturer of the LiDAR. 
-Required to set the according LiDAR IP adress (192.168.1.24)
+```roslaunch sick_scan sick_mrs_6xxx.launch```
+Required to set the according LIDAR IP adress (192.168.1.24)
 Double Check through browser 
 
 #### Geometry2
@@ -62,19 +60,29 @@ Setup: Choose what you get, either a pointcloud (3d) or a laser scan (2D) and se
 
 
 ## Google Cartographer ROS
-follow instructions to install from here but do a catkin build in the last step. 
+follow instructions to install from [Google Cartographer ROS Docs](https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html) but do a catkin build in the last step. 
 
-start with the backpack_2d files and modify them for roboy!
+According files for Roboy are defined. To test with demo bag run:
+```roslaunch cartographer_ros roboy_indoor.launch bag_filename:=${HOME}/Downloads/cartographer_paper_deutsches_museum.bag```
 
 ### src/cartographer_ros/cartographer_ros/urdf
-´urdf´-files essentially define the physical configuration of the robot such as relative positions of different sensors. More can be found ´here ROS wiki urdf´
+`urdf`-files essentially define the physical configuration of the robot such as relative positions of different sensors. More can be found ´here ROS wiki urdf´
 
 ### src/cartographer_ros/cartographer_ros/launch
-- add call for sickscan so we don't have to do it manually
+- add call for sickscan so we don't have to do it manually`. See here:
+```https://github.com/SICKAG/sick_scan/issues/5```
 - adapt names to point to according urdf file
 
 
 
 ### src/cartographer_ros/cartographer_ros/configuration
-- .lua files
+- `.lua` files
 - compare dokumentation
+
+
+# Hardware Setup
+
+## LIDAR 
+After the stated packages have been build, connect the LIDAR to an appropriate power source (brown = positive -> red, blue = negative -> black) and an ethernet switch. You will need to connect your Laptop to that switch as well. 
+
+Hint for VM users: This guide was written based on experiences from a USB-C only MacBook running Ubuntu 16.04 in VMware Fusion. When connecting ethernet through a ethernet to USB-C adapter, mount the adapter to macOS, such that the connection is shown in the System Preferences of your host machine. Then, disconnect from any WiFi connections and the VM will switch to the wired connection. This lead to a plug-and-play setup of the LIDAR which can be double checked through calling the IP adress in a browser. 
