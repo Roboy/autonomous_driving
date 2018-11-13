@@ -1,15 +1,3 @@
-[submodule "src/sick_scan"]
-	path = src/sick_scan
-	url = https://github.com/SICKAG/sick_scan.git
-[submodule "src/pointcloud_to_laserscan"]
-	path = src/pointcloud_to_laserscan
-	url = https://github.com/ros-perception/pointcloud_to_laserscan.git
-[submodule "src/geometry2"]
-	path = src/geometry2
-	url = https://github.com/ros/geometry2.git
-[submodule "src/cartographer_ros"]
-	path = src/cartographer_ros
-	url = https://github.com/Roboy/cartographer_ros.git
 [submodule "autonomous_driving_src"]
 	path = autonomous_driving_src
 	url = https://github.com/Roboy/autonomous_driving_src.git
