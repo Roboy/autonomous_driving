@@ -13,7 +13,7 @@ RUN /bin/bash -c 'source /opt/ros/kinetic/setup.bash'
 RUN git clone https://github.com/Roboy/autonomous_driving_src.git src
 WORKDIR /home/ros/src
 
-RUN git checkout devel && \
+RUN git checkout docker && \
     git submodule init && \
     git submodule update
 
