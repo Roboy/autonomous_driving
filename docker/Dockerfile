@@ -11,7 +11,16 @@ RUN /bin/bash -c 'source /opt/ros/kinetic/setup.bash'
 
 # Copy autonomous driving code
 RUN git clone https://github.com/Roboy/autonomous_driving_src.git src
-WORKDIR /home/ros/src
+WORKDIR /home/catkin_ws/src
+
+# Install prebuild packages
+RUN sudo apt-get install ros-kinetic-map-server && \
+    sudo apt-get install ros-kinetic-sick-scan && \
+    sudo apt-get install -y python-wstool python-rosdep ninja-build && \
+    sudo apt-get install ros-kinetic-abseil-cpp && \
+    sudo apt-get install ros-kinetic-geometry2 && \
+    sudo apt-get install libarmadillo-dev && \
+    sudo apt-get install ros-kinetic-moveit-msgs
 
 RUN git checkout devel && \
     git submodule init && \
@@ -19,18 +28,6 @@ RUN git checkout devel && \
 
 RUN cd /home/ros/src/cartographer_ros && \
     git checkout roboy
-
-RUN cd /home/ros/src/sick_scan && \
-    git checkout master
-
-RUN cd /home/ros/src/geometry2 && \
-    git pull origin indigo-devel && \
-    git checkout indigo-devel
-
-RUN cd /home/ros/src/pointcloud_to_laserscan && \
-    git pull origin lunar-devel && \
-    git checkout indigo-devel
-
 
 # Compile cartographer
 WORKDIR /home/ros
