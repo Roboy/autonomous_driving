@@ -4,23 +4,14 @@ WORKDIR /home/ros
 
 # Install system libraries
 RUN apt-get update && \
-    apt-get install -y sudo ninja-build python-catkin-tools ros-kinetic-catkin
+    apt-get install -y sudo ninja-build python-catkin-tools python-wstool python-rosdep ros-kinetic-catkin ros-kinetic-map-server ros-kinetic-sick-scan ros-kinetic-abseil-cpp ros-kinetic-geometry2 libarmadillo-dev ros-kinetic-moveit-msgs
 
 # Initialize ROS
 RUN /bin/bash -c 'source /opt/ros/kinetic/setup.bash'
 
 # Copy autonomous driving code
 RUN git clone https://github.com/Roboy/autonomous_driving_src.git src
-WORKDIR /home/catkin_ws/src
-
-# Install prebuild packages
-RUN sudo apt-get install ros-kinetic-map-server && \
-    sudo apt-get install ros-kinetic-sick-scan && \
-    sudo apt-get install -y python-wstool python-rosdep ninja-build && \
-    sudo apt-get install ros-kinetic-abseil-cpp && \
-    sudo apt-get install ros-kinetic-geometry2 && \
-    sudo apt-get install libarmadillo-dev && \
-    sudo apt-get install ros-kinetic-moveit-msgs
+WORKDIR /home/ros/src
 
 RUN git checkout devel && \
     git submodule init && \
