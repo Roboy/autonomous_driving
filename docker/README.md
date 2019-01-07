@@ -14,7 +14,10 @@ To create a docker container run
 ```
 sudo docker run -d -p 11111:11311 --name roboy_ad roboy_ad:latest
 ```
-Don't forget to copy files into the docker: ```docker cp dara/. mycontainer:/root/data/``` (mycontainer i.e. 3fab260b5056) 
+Don't forget to copy files into the docker (mycontainer i.e. 3fab260b5056, when in bash compare root@mycontainer): 
+```
+docker cp data/. mycontainer:/root/data/
+``` 
 
 ### In every terminal:
 To access the roscore from the docker container, set ROS_MASTER_URI on your host machine: 
