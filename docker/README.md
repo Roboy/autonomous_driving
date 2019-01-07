@@ -26,5 +26,8 @@ sudo docker exec -it roboy_ad bash
 
 More useful commands:
 
- * ```sudo docker kill roboy_ad``` to stop the container
- * ```sudo docker start roboy_ad``` to restart the container
+ * ```sudo docker stop roboy_ad``` to stop the container
+ * ```sudo docker kill roboy_ad``` forces shutdwon
+ * ```sudo docker start roboy_ad``` to start the container
+ * ```sudo docker ps``` (shows active)
+ * ```sudo docker container list``` (might also show inactive)
