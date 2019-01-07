@@ -5,11 +5,24 @@ Once a container of this image is created, it will run a roscore exposed to the 
 
 ## Usage
 
-To build the image run ```sudo docker build -t roboy_ad .```
+To build the image run 
+```
+sudo docker build -t roboy_ad .
+```
 
-To create a docker container run ```sudo docker run -d -p 11111:11311 --name roboy_ad roboy_ad:latest```
+To create a docker container run 
+```
+sudo docker run -d -p 11111:11311 --name roboy_ad roboy_ad:latest
+```
 
-To access the roscore from the docker container, set ROS_MASTER_URI on your host machine ```export ROS_MASTER_URI=http://0.0.0.0:11111```
+To access the roscore from the docker container, set ROS_MASTER_URI on your host machine: 
+```
+export ROS_MASTER_URI=http://0.0.0.0:11111
+```
+enter docker shell
+```
+sudo docker exec -it roboy_ad bash
+```
 
 More useful commands:
 
