@@ -27,14 +27,14 @@ RUN src/cartographer/scripts/install_proto3.sh && \
     rosdep update && \
     rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y 
 
-# Pure Localization
-RUN cd src/cartographer/ && \
-    git checkout master
-
 # Build catkin workspace
 RUN catkin config --extend /opt/ros/kinetic
 RUN catkin build
 RUN /bin/bash -c 'source devel/setup.bash'
+
+# Pure Localization
+RUN cd src/cartographer/ && \
+    git checkout master
 
 # Configure ROS master
 RUN export ROS_MASTER_URI=0.0.0.0:11311
