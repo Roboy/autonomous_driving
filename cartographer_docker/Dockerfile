@@ -36,7 +36,3 @@ RUN /bin/bash -c 'source devel/setup.bash'
 RUN cd src/cartographer/ && \
     git checkout master
 
-# Configure ROS master
-RUN export ROS_MASTER_URI=0.0.0.0:11311
-
-CMD roscore 
