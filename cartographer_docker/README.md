@@ -12,7 +12,7 @@ sudo docker build -t roboy_cartographer . --no-cache
 
 To create a docker container run 
 ```
-sudo docker run -d -p 11111:11311 --name roboy_cartographer roboy_cartographer:latest
+sudo docker run -it -d -p 11111:11311 --network=host --name roboy_cartographer roboy_cartographer:latest bash
 ```
 Don't forget to copy files into the docker (mycontainer i.e. 3fab260b5056, when in bash compare root@mycontainer): 
 ```
