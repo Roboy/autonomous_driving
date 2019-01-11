@@ -15,13 +15,6 @@ To create a docker container run
 sudo docker run -it -d -p 11111:11311 --network=host --name roboy_cartographer roboy_cartographer:latest bash
 ```
 
-## Usage
-### Host
-It is intended that oyu run `roscore` and all I/O on your host machine. Visualization through `rviz` is also run on the host.
-
-### Docker
-through setting `--network=host` docker is in the same network as your host and can therefore interact with `roscore`.
-
 ## Work with the docker
 ### Startup
 To start the container:
@@ -49,3 +42,39 @@ To stop the container:
  * ```sudo docker kill roboy_cartographer``` forces shutdwon
  * ```sudo docker ps``` (shows active)
  * ```sudo docker ps -a``` (shows all)
+
+## Usage
+### Host
+It is intended that oyu run `roscore` and all I/O on your host machine. Visualization through `rviz` is also run on the host. You will need an installation of cartographer (outdated) for this.
+```
+sudo apt-get install ros-kinetic-cartographer*
+```
+
+### Docker
+through setting `--network=host` docker is in the same network as your host and can therefore interact with `roscore`.
+
+### Example
+#### Terminal 1
+```
+roscore
+```
+#### Terminal 2
+```
+rosrun rviz rviz
+```
+Load `roboy.rviz` through `File -> Open Config`
+#### Terminal 3
+Enter the docker and start cartographer:
+```
+sudo docker start roboy_cartographer
+sudo docker exec -it roboy_cartographer bash
+```
+```
+source devel/setup.bash
+roslaunch cartographer_ros roboy_indoor_online.launch
+```
+#### Terminal 4
+Assuming you downloaded the UTUM data from [here](https://drive.google.com/drive/folders/1AyYO9wN8olIHOroJGfmnALDIm3vn1W_s), play one of the ROS-bags
+```
+rosbag play ${HOME}/data/utum/utum_groundfloor_cw.bag
+```
