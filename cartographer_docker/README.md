@@ -64,7 +64,7 @@ On host:
 ```
 rosrun rviz rviz
 ```
-Load `roboy.rviz` through `File -> Open Config`
+Load `roboy_demo_2d.rviz` through `File -> Open Config`
 #### Terminal 3
 Enter the docker and start cartographer:
 ```
