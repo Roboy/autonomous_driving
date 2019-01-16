@@ -1,6 +1,0 @@
-[submodule "calibration/RADOCCToolbox"]
-	path = calibration/RADOCCToolbox
-	url = https://github.com/SubMishMar/RADOCCToolbox.git
-[submodule "calibration/RADLOCC"]
-	path = calibration/RADLOCC
-	url = https://github.com/akas9185/RADLOCC.git
