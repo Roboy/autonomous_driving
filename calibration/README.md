@@ -5,4 +5,4 @@ This can be done with the RADOCC and RADLOCC toolbox submodules. You will requir
 
 An extensive step-by-step[Tutorial](https://github.com/Roboy/autonomous_driving/wiki/Calibration:-Extrinsic-calibration-between-camera-and-lidar) can be found in the Github wiki of this repository.
 
-There is also the official [RADOCC](http://www-personal.acfr.usyd.edu.au/akas9185/AutoCalib/AutoCamDoc/index.html) and [RADOCC](http://www-personal.acfr.usyd.edu.au/akas9185/AutoCalib/AutoLaserCamDoc/index.html) website that provides additional informaton
+There is also the official [RADOCC](http://www-personal.acfr.usyd.edu.au/akas9185/AutoCalib/AutoCamDoc/index.html) and [RADLOCC](http://www-personal.acfr.usyd.edu.au/akas9185/AutoCalib/AutoLaserCamDoc/index.html) website that provides additional informaton
