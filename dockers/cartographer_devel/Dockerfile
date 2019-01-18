@@ -4,7 +4,7 @@ WORKDIR /home/ros
 
 # Install system libraries
 RUN apt-get update && \
-    apt-get install -y sudo ninja-build python-catkin-tools python-wstool python-rosdep ros-kinetic-abseil-cpp ros-kinetic-catkin ros-kinetic-map-server ros-kinetic-geometry2 ros-kinetic-moveit-msgs
+    apt-get install -y sudo ninja-build python-catkin-tools python-wstool python-rosdep ros-kinetic-abseil-cpp ros-kinetic-catkin ros-kinetic-map-server ros-kinetic-geometry2 ros-kinetic-moveit-msgs net-tools
 
 # Initialize ROS
 RUN /bin/bash -c 'source /opt/ros/kinetic/setup.bash'
