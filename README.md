@@ -1,20 +1,17 @@
 # Autonomous Driving
 
-## Repository Structure
-The folder '/src' is intended to simply be cloned into the needed catkin workspace. 
-
-## Prerequisites
-### ROS Kinetic
+# Prerequisites
+## ROS Kinetic
 [ROS Kinetic](http://wiki.ros.org/kinetic)
 
-### Rosbridge_suite
+## Rosbridge_suite
 Make sure you get [ROSbridge suite](http://wiki.ros.org/rosbridge_suite)'s kinetic version!
 
-### Catkin Tools
+## Catkin Tools
 [Catkin tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) for the use of catkin build.
 
-## Install
-Clone submodule `autonomous_driving_src` into your `catkin_ws/src` folder. 
+# Install
+Clone submodule `autonomous_driving_src` into your `catkin_ws/src` folder and build according to instructions there.
 
 # Hardware Setup
 
@@ -27,17 +24,3 @@ Hint for VM users: This guide was written based on experiences from a USB-C only
 Extrinsic calibration provides the relative translation and rotation between camera and lidar.
 
 For a detailed step-by-step [tutorial](https://github.com/Roboy/autonomous_driving/wiki/Calibration:-Extrinsic-calibration-between-camera-and-lidar) visit the Github wiki of this repository.
-
-# MISC
-
-### Common Commands
-```
-rostopic list
-rostopic echo /fake/scan
-rostopic info
-rosnode info
-```
-
-### RVIZ
-RVIZ (´$ rviz´) is the tool used for visualization
-Setup: Choose what you get, either a pointcloud (3d) or a laser scan (2D) and set fixed frame variable accordingly. 
