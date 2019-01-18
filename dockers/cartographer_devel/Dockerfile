@@ -38,4 +38,6 @@ RUN cd src/cartographer_ros/ && \
     git pull
 
 # Get Data
-COPY ${HOME}/data/. ${HOME}/data/
+RUN cd ${HOME}
+    mkdir data
+COPY /home/roboy/data/. ${HOME}/data/
