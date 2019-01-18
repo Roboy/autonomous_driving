@@ -34,6 +34,6 @@ RUN /bin/bash -c 'source devel/setup.bash'
 
 # Update Cartographer_ROS roboy
 RUN cd src/cartographer_ros/ && \
-    git checkout roboy/ && \
+    git checkout roboy && \
     git pull
 
