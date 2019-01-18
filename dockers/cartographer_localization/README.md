@@ -66,6 +66,11 @@ cd ../..
 ```
 source devel/setup.bash
 ```
+### Get map-file to load into Cartographer
+```
+sudo docker cp data/. cartographer_devel:/root/data/
+```
+
 ### Start Localization
 Before starting your code in docker, run the following lines of code replacing `DOCKER_IP` with the actual IP adress of your docker machine in each line:
 ```
