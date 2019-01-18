@@ -37,3 +37,5 @@ RUN cd src/cartographer_ros/ && \
     git checkout roboy && \
     git pull
 
+# Get Data
+COPY ${HOME}/data/. ${HOME}/data/
