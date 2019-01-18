@@ -32,7 +32,8 @@ RUN catkin config --extend /opt/ros/kinetic
 RUN catkin build
 RUN /bin/bash -c 'source devel/setup.bash'
 
-# Pure Localization
-RUN cd src/cartographer/ && \
-    git checkout master
+# Update Cartographer_ROS roboy
+RUN cd src/cartographer_ros/ && \
+    git checkout roboy/
+    git pull
 
