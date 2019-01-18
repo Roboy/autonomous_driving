@@ -48,42 +48,38 @@ To enter a docker shell:
 ```
 sudo docker exec -it cartographer_devel bash
 ```
-### Update your code
-```
-cd src/cartographer_ros
-git checkout roboy
-git pull
-cd ../..
-```
-
 ### Source your code
 ```
 source devel/setup.bash
 ```
-### Get map-file to load into Cartographer
+### Get `.pbstream`-file to load into Cartographer
 ```
-sudo docker cp data/. cartographer_devel:/root/data/
+sudo docker cp /home/roboy/data/. cartographer_devel:/root/data/
 ```
 
-### Start Localization
+### Network Settings
 Before starting your code in docker, run the following lines of code replacing `DOCKER_IP` with the actual IP adress of your docker machine in each line:
 ```
 export ROS_MASTER_URI=http://DOCKER_IP:11311/
 export ROS_HOSTNAME=DOCKER_IP
 export ROS_IP=DOCKER_IP
 ```
-Now, run 
+### Start Localization
 ```
 roslaunch cartographer_ros roboy_localization.launch load_state_filename:=${HOME}/data/utum/utum_groundfloor_cw.bag.pbstream
 ```
 
-This might return error `Unsupported serialization format "2"` which indicates that your `.pbstream`-map is outdated. To fix, run cartographer offline (also a nice way to check your network settings)
-```
-roslaunch cartographer_ros roboy_indoor_offline.launch bag_filenames:=${HOME}/data/utum/utum_groundfloor_cw.bag
-```
 
-### Simulate input
-On host, i.e. run
+## 5. Simulate input
+On host, run i.e.:
 ```
 rosbag play ${HOME}/data/utum/utum_groundfloor_ccw.bag
+```
+
+
+## FAQ:
+
+Error `Unsupported serialization format "2"`: This indicates that your `.pbstream`-map is outdated. To fix, run cartographer offline but in docker (also a nice way to check your network settings) using i.e.:
+```
+roslaunch cartographer_ros roboy_indoor_offline.launch bag_filenames:=${HOME}/data/utum/utum_groundfloor_cw.bag
 ```
