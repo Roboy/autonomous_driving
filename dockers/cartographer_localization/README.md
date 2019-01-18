@@ -1,4 +1,4 @@
-# Description
+# Pure Localization
 
 At the end of the semester, this will contain a docker idling in pure_localization mode. No entering the shell will be necessary. Until this is set up, this README hosts instructions on how to run pure localizatio on `LEIA`.
 
