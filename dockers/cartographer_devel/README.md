@@ -12,7 +12,7 @@ sudo docker build -t cartographer_devel . --no-cache
 
 To create a docker container run 
 ```
-sudo docker run -it -d -p 11111:11311 --network=host --name cartographer_devel cartographer_devel:latest bash
+sudo docker run -it -d --network=host --name cartographer_devel cartographer_devel:latest bash
 ```
 
 ## Work with the docker
