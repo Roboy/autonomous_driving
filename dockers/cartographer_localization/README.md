@@ -56,13 +56,6 @@ git pull
 cd ../..
 ```
 
-### Enable pure localization
-```
-cd src/cartographer
-git checkout master
-git pull
-cd ../..
-```
 ### Source your code
 ```
 source devel/setup.bash
