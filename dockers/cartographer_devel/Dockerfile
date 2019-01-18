@@ -36,8 +36,3 @@ RUN /bin/bash -c 'source devel/setup.bash'
 RUN cd src/cartographer_ros/ && \
     git checkout roboy && \
     git pull
-
-# Get Data
-RUN cd ${HOME} && \
-    mkdir data
-COPY /home/roboy/data/. ${HOME}/data/
