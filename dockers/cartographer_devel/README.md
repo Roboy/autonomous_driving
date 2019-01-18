@@ -7,24 +7,24 @@ Once a container of this image is created, it will run a roscore exposed to the 
 
 To build the image run 
 ```
-sudo docker build -t roboy_cartographer . --no-cache
+sudo docker build -t cartographer_devel . --no-cache
 ```
 
 To create a docker container run 
 ```
-sudo docker run -it -d -p 11111:11311 --network=host --name roboy_cartographer roboy_cartographer:latest bash
+sudo docker run -it -d --network=host --name cartographer_devel cartographer_devel:latest bash
 ```
 
 ## Work with the docker
 ### Startup
 To start the container:
 ```
-sudo docker start roboy_cartographer
+sudo docker start cartographer_devel
 ``` 
 ### Interaction
 To enter a docker shell:
 ```
-sudo docker exec -it roboy_cartographer bash
+sudo docker exec -it cartographer_devel bash
 ```
 ### Exiting
 To exit the docker, in the docker shell type `exit`
@@ -35,11 +35,11 @@ root@ubuntu:/home/ros# exit
 ### Stopping
 To stop the container:
  ```
- sudo docker stop roboy_cartographer
+ sudo docker stop cartographer_devel
  ``` 
  
 ### More useful commands:
- * ```sudo docker kill roboy_cartographer``` forces shutdwon
+ * ```sudo docker kill cartographer_devel``` forces shutdwon
  * ```sudo docker ps``` (shows active)
  * ```sudo docker ps -a``` (shows all)
 
@@ -68,12 +68,12 @@ Load `roboy_demo_2d.rviz` through `File -> Open Config`
 #### Terminal 3
 Enter the docker and start cartographer:
 ```
-sudo docker start roboy_cartographer
-sudo docker exec -it roboy_cartographer bash
+sudo docker start cartographer_devel
+sudo docker exec -it cartographer_devel bash
 ```
 ```
 source devel/setup.bash
-roslaunch cartographer_ros roboy_indoor_online.launch
+roslaunch cartographer_devel roboy_indoor_online.launch
 ```
 #### Terminal 4
 Assuming you downloaded the UTUM data from [here](https://drive.google.com/drive/folders/1AyYO9wN8olIHOroJGfmnALDIm3vn1W_s), play one of the ROS-bags on your host:
