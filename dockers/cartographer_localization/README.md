@@ -54,7 +54,7 @@ cd src/cartographer_ros
 git checkout roboy
 git pull
 cd ../..
-```
+```
 ### Enable pure localization
 ```
 cd src/cartographer
@@ -78,7 +78,13 @@ export ROS_MASTER_URI=http://DOCKER_IP:11311/
 export ROS_HOSTNAME=DOCKER_IP
 export ROS_IP=DOCKER_IP
 ```
-Now, execute 
+Now, run 
 ```
 roslaunch cartographer_ros roboy_localization.launch load_state_filename:=${HOME}/data/utum/utum_groundfloor_cw.bag.pbstream
+```
+
+### Simulate input
+On host, i.e. run
+```
+rosbag play ${HOME}/data/utum/utum_groundfloor_ccw.bag
 ```
