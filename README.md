@@ -1,6 +1,6 @@
 # Autonomous Driving
 
-This is [Roboy's]https://roboy.org() [Autonomous Driving Team's (update hyperlink when website is up)](https://roboy.org/team) main repository. Setup and usage is shown in the following sections.
+This is [Roboy's](https://roboy.org) [Autonomous Driving Team's (update hyperlink when website is up)](https://roboy.org/team/) main repository. Setup and usage is shown in the following sections.
 
 Members of [Roboy](https://github.com/roboy) can find additional information about this project on our [Confluence page](https://devanthro.atlassian.net/wiki/spaces/WS1819/pages/332071090/Autonomous+Driving). 
 
