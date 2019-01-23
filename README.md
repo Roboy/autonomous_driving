@@ -1,6 +1,8 @@
 # Autonomous Driving
 
-This is [Roboy's Autonomous Driving Team's (update hyperlink when website is up)](https://roboy.org) main page. 
+This is [Roboy's]https://roboy.org() [Autonomous Driving Team's (update hyperlink when website is up)](https://roboy.org/team) main repository. Setup and usage is shown in the following sections.
+
+Members of [Roboy](https://github.com/roboy) can find additional information about this project on our [Confluence page](https://devanthro.atlassian.net/wiki/spaces/WS1819/pages/332071090/Autonomous+Driving). 
 
 # Prerequisites
 You will require [ROS Kinetic](http://wiki.ros.org/kinetic) and [Catkin tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) for the use of this repository.
@@ -8,7 +10,9 @@ You will require [ROS Kinetic](http://wiki.ros.org/kinetic) and [Catkin tools](h
 # Code structure
 Environmental perception is achieved through the use of a Sick Lidar LMS 1xx and a Intel Realsense Camera. 
 
-In a first iteration, this data is used for generating a map of [our environment](https://www.google.com/maps/dir/Garching+-+Forschungszentrum,+Garching+bei+München/UNTERNEHMERTUM+GMBH,+Lichtenbergstraße+6,+85748+Garching+bei+München/@48.266636,11.6671388,17z/data=!4m14!4m13!1m5!1m1!1s0x479e72ece78d321f:0xf8d2874f0eb7c24c!2m2!1d11.6715693!2d48.2650433!1m5!1m1!1s0x479e728cfa649025:0xd27f72e7835847a7!2m2!1d11.6662132!2d48.2681512!3e2) through the use of [Google Cartographer](https://github.com/Roboy/cartographer_ros/tree/roboy). Based on that map, [our navigation stack](https://github.com/Roboy/autonomous_driving_src/tree/master/navigation) is executed for path planning. Once a path is planned, we use Google Cartographers pure localization feture to find ourselfs on the map. This gives closed-loop feedback to the navigation stack for updating the path planning.
+In a first iteration, this data is used for generating a map of [our environment](https://www.google.com/maps/dir/Garching+-+Forschungszentrum,+Garching+bei+München/UNTERNEHMERTUM+GMBH,+Lichtenbergstraße+6,+85748+Garching+bei+München/@48.266636,11.6671388,17z/data=!4m14!4m13!1m5!1m1!1s0x479e72ece78d321f:0xf8d2874f0eb7c24c!2m2!1d11.6715693!2d48.2650433!1m5!1m1!1s0x479e728cfa649025:0xd27f72e7835847a7!2m2!1d11.6662132!2d48.2681512!3e2) through the use of [Google Cartographer](https://github.com/Roboy/cartographer_ros/tree/roboy). Based on that map, [our navigation stack](https://github.com/Roboy/autonomous_driving_src/tree/master/navigation) is executed for path planning. Once a path is planned, we use Google Cartographers pure localization feture to find ourselfs on the map. This gives closed-loop feedback to the navigation stack for updating the path planning. 
+
+We output steering parameters an dvelocity settings to the Rickshaw. 
 
 A simulation of the above can be run from [here](https://github.com/Roboy/autonomous_driving_src/tree/master/roboy_models). 
 
