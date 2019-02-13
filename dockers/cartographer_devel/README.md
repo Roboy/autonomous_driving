@@ -73,7 +73,7 @@ sudo docker exec -it cartographer_devel bash
 ```
 ```
 source devel/setup.bash
-roslaunch cartographer_devel roboy_indoor_online.launch
+roslaunch cartographer_ros roboy_indoor_online.launch
 ```
 #### Terminal 4
 Assuming you downloaded the UTUM data from [here](https://drive.google.com/drive/folders/1AyYO9wN8olIHOroJGfmnALDIm3vn1W_s), play one of the ROS-bags on your host:
