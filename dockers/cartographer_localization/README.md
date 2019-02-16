@@ -2,14 +2,14 @@
 
 At the end of the semester, this will contain a docker idling in pure_localization mode. No entering the shell will be necessary. Until this is set up, this README hosts instructions on how to run pure localizatio on `LEIA`.
 
-After having build a docker as mentioned in cartographer_devel, it is time to set up networking. In this example, we want to run [Google Cartographers pure localization](https://github.com/Roboy/cartographer_ros/tree/roboy) in a `docker` while `roscore` is running on the docker's `host` machine. Visualization is done in `rviz` in a VM on another computer, called `remote`. As IP adresses will change during the process, `.bashrc` is not used here.
+After having build a docker as mentioned in cartographer_devel, it is time to set up networking. In this example, we want to run [Google Cartographers pure localization](https://github.com/Roboy/cartographer_ros/tree/roboy) in a `docker` while `roscore` is running on the docker's `host` machine. Visualization is done in `rviz` in a VM on another computer, called `remote`. 
 
+## 1. Setup
+It is assumed, you set up a docker as described in cartographer_devel and an `offline`-run has been made to get a `.pbstream` file. Make sure your computers are all connected to the same Network and set your VM to `Bridge Networking`, such that it appears in the network as a stand-alone machine.
 
-## Setup
-It is assumed, you set up a docker as described in cartographer_devel
-
-## Network Info
-Firstly, make sure your computers are all connected to the same Network and set your VM to `Bridge Networking`, such that it appears in the network as a stand-alone machine. To get the IP-adresses, run `ifconfig` in terminal of `host`, `docker` and `remote`. If your setup before has been correct, you will notice identical IP adresses `HOST_IP` and `DOCKER_IP` of `host` and `docker`. 
+- Host Machine
+- Docker
+- Remote 
 
 ## 2. Host
 Before starting `roscore` on host, run the following lines of code replacing `HOST_IP` with the actual IP adress of your host machine in each line:
@@ -52,10 +52,6 @@ sudo docker exec -it cartographer_devel bash
 ```
 source devel/setup.bash
 ```
-### Get `.pbstream`-file to load into Cartographer
-```
-sudo docker cp /home/roboy/data/. cartographer_devel:/root/data/
-```
 
 ### Network Settings
 Before starting your code in docker, run the following lines of code replacing `DOCKER_IP` with the actual IP adress of your docker machine in each line:
@@ -71,7 +67,13 @@ roslaunch cartographer_ros roboy_localization.launch load_state_filename:=${HOME
 
 
 ## 5. Simulate input
-On host, run i.e.:
+On host, open a new terminal and set network accordingly
+```
+export ROS_MASTER_URI=http://HOST_IP:11311/
+export ROS_HOSTNAME=HOST_IP
+export ROS_IP=HOST_IP
+```
+run i.e.
 ```
 rosbag play ${HOME}/data/utum/utum_groundfloor_ccw.bag
 ```
