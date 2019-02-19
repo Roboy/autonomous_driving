@@ -62,7 +62,7 @@ export ROS_IP=DOCKER_IP
 ```
 ### Start Localization
 ```
-roslaunch cartographer_ros roboy_localization.launch load_state_filename:=${HOME}/data/utum/utum_groundfloor_cw.bag.pbstream
+roslaunch cartographer_ros roboy_localization.launch load_state_filename:=${HOME}/data/2019_02_19/utum_5.bag.pbstream
 ```
 
 
@@ -75,7 +75,7 @@ export ROS_IP=HOST_IP
 ```
 run i.e.
 ```
-rosbag play ${HOME}/data/utum/utum_groundfloor_ccw.bag
+rosbag play ${HOME}/data/2019_02_19/utum_4.bag
 ```
 
 
