@@ -1,24 +1,30 @@
-# Dockers
+# Docker
 
 This is folder contains various docker images for Roboy's autonomous driving code from [here](https://github.com/Roboy/autonomous_driving_src/tree/master). Each subfolder contains docker-specific instructions.
 
-# Docker Basics
+# Basics
 
 ## Setup
 
-To build an image run 
+### Build Image 
 ```
 sudo docker build -t docker_name . --no-cache
 ```
 
-To create a docker container run 
+### Create Container 
 ```
 sudo docker run -it -d --network=host --name docker_name docker_name:latest bash
 ```
 through setting `--network=host`, docker is in the same network as your host and can therefore interact with `roscore`.
 
+### Copy files to/from docker 
+```
+docker cp data/. mycontainer:/root/data/
+``` 
+(mycontainer i.e. 3fab260b5056, when in bash compare root@mycontainer): 
 
-## Work with the docker
+
+## Booting
 ### Startup
 To start the container:
 ```

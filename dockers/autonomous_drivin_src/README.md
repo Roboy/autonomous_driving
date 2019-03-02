@@ -12,28 +12,17 @@ sudo docker build -t roboy_ad .
 
 To create a docker container run 
 ```
-sudo docker run -d -p 11111:11311 --name roboy_ad roboy_ad:latest
-```
-Don't forget to copy files into the docker (mycontainer i.e. 3fab260b5056, when in bash compare root@mycontainer): 
-```
-docker cp data/. mycontainer:/root/data/
-``` 
+sudo docker run -it -d --network=host --name roboy_ad docker_name:latest bash
 
-### In every terminal:
-To access the roscore from the docker container, set ROS_MASTER_URI on your host machine: 
 ```
-export ROS_MASTER_URI=http://0.0.0.0:11111
+## Work with the docker
+### Startup
+To start the container:
 ```
-enter docker shell
+sudo docker start roboy_ad
+``` 
+### Interaction
+To enter a docker bash:
 ```
 sudo docker exec -it roboy_ad bash
 ```
-rviz needs to be run externally, so don't enter the bash but instead do ```rosrun rviz rviz```
-
-### More useful commands:
-
- * ```sudo docker stop roboy_ad``` to stop the container
- * ```sudo docker kill roboy_ad``` forces shutdwon
- * ```sudo docker start roboy_ad``` to start the container
- * ```sudo docker ps``` (shows active)
- * ```sudo docker container list``` (might also show inactive)
