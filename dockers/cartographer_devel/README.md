@@ -51,8 +51,8 @@ It is assumed, you set up a docker as described in cartographer_devel and an `of
 Before starting `roscore` on host, run the following lines of code replacing `HOST_IP` with the actual IP adress of your host machine in each line:
 ```
 export ROS_MASTER_URI=http://192.168.0.116:11311/
-export ROS_HOSTNAME=192.168.0.119
-export ROS_IP=192.168.0.119
+export ROS_HOSTNAME=192.168.0.116
+export ROS_IP=192.168.0.116
 ```
 Afterwards, run
 ```
@@ -95,9 +95,9 @@ Download the data from [here](https://drive.google.com/drive/folders/1AyYO9wN8ol
 ### Network Settings
 Before starting your code in docker, run the following lines of code replacing `DOCKER_IP` with the actual IP adress of your docker machine in each line:
 ```
-export ROS_MASTER_URI=http://DOCKER_IP:11311/
-export ROS_HOSTNAME=DOCKER_IP
-export ROS_IP=DOCKER_IP
+export ROS_MASTER_URI=http://192.168.0.116:11311/
+export ROS_HOSTNAME=192.168.0.116
+export ROS_IP=192.168.0.116
 ```
 ### Start Localization
 ```
