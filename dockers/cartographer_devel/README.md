@@ -114,7 +114,7 @@ export ROS_IP=192.168.0.119
 ```
 run i.e.
 ```
-rosbag play ${HOME}/data/2019_02_19/utum_4.bag
+rosbag play ${HOME}/data/2019_02_19/utum_4.bag --clock
 ```
 
 
