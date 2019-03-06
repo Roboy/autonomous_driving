@@ -7,3 +7,6 @@
 [submodule "calibration/RADLOCC"]
 	path = calibration/RADLOCC
 	url = https://github.com/akas9185/RADLOCC.git
+[submodule "src/cartographer_ros"]
+	path = src/cartographer_ros
+	url = https://github.com/Roboy/cartographer_ros/
