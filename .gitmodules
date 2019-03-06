@@ -13,3 +13,6 @@
 [submodule "src/calibration/radlocc_calibration"]
 	path = src/calibration/radlocc_calibration
 	url = https://github.com/bernardomig/radlocc_calibration.git
+[submodule "src/realsense"]
+	path = src/realsense
+	url = https://github.com/intel-ros/realsense.git
