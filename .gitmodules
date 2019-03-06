@@ -4,3 +4,12 @@
 [submodule "src/cartographer_ros"]
 	path = src/cartographer_ros
 	url = https://github.com/Roboy/cartographer_ros/
+[submodule "src/calibration/RADLOCC"]
+	path = src/calibration/RADLOCC
+	url = https://github.com/akas9185/RADLOCC.git
+[submodule "src/calibration/RADOCCToolbox"]
+	path = src/calibration/RADOCCToolbox
+	url = https://github.com/SubMishMar/RADOCCToolbox.git
+[submodule "src/calibration/radlocc_calibration"]
+	path = src/calibration/radlocc_calibration
+	url = https://github.com/bernardomig/radlocc_calibration.git
