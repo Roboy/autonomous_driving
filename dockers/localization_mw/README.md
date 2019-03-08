@@ -1,6 +1,6 @@
 # Cartographer Docker
 
-This is a docker image with installed localization code from the [Roboy Google Cartographer repository](https://github.com/Roboy/cartographer_ros). It expects ROS_CORE @ '192,168.0.105'. 
+This is a docker image with installed localization code from the [Roboy Google Cartographer repository](https://github.com/Roboy/cartographer_ros). It expects ROS_CORE @ `192.168.0.105`. 
 
 ## Setup
 
