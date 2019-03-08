@@ -36,11 +36,12 @@ RUN /bin/bash -c 'source devel/setup.bash'
 RUN cd src/cartographer_ros/ && \
     git checkout roboy && \
     git pull
+RUN /bin/bash -c 'source devel/setup.bash'
 
 # SET IPs
-RUN export ROS_MASTER_URI=http://192.168.0.116:11311/ && \
-    export ROS_HOSTNAME=192.168.0.116 && \
-    export ROS_IP=192.168.0.116
+RUN export ROS_MASTER_URI=http://192.168.0.105:11311/ && \
+    export ROS_HOSTNAME=192.168.0.105 && \
+    export ROS_IP=192.168.0.105
 
 # start pure localization
-RUN roslaunch cartographer_ros roboy_mw_localization.launch
+CMD roslaunch cartographer_ros roboy_mw_localization.launch
