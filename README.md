@@ -2,7 +2,7 @@
 
 This is [Roboy's](https://roboy.org) [Autonomous Driving Team's (update hyperlink when website is up)](https://roboy.org/team/) main repository. Setup and usage is shown in the following sections.
 
-Members of [Roboy](https://github.com/roboy) can find additional information about this project on our [Confluence page](https://devanthro.atlassian.net/wiki/spaces/WS1819/pages/332071090/Autonomous+Driving). 
+To start, please go to our [Wiki page](https://github.com/Roboy/autonomous_driving/wiki). Members of [Roboy](https://github.com/roboy) can find additional information about this project on our [Confluence page](https://devanthro.atlassian.net/wiki/spaces/WS1819/pages/332071090/Autonomous+Driving). 
 
 # Prerequisites
 You will require [ROS Kinetic](http://wiki.ros.org/kinetic) and [Catkin tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) for the use of this repository.
