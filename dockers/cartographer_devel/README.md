@@ -43,16 +43,16 @@ After having build a docker as mentioned in cartographer_devel, it is time to se
 ## 1. Setup
 It is assumed, you set up a docker as described in cartographer_devel and an `offline`-run has been made to get a `.pbstream` file. Make sure your computers are all connected to the same Network and set your VM to `Bridge Networking`, such that it appears in the network as a stand-alone machine.
 
-- Host Machine (ours has IP 192.168.0.116)
+- Host Machine (ours has IP 192.168.0.105)
 - Docker
 - Remote 
 
 ## 2. Host
 Before starting `roscore` on host, run the following lines of code replacing `HOST_IP` with the actual IP adress of your host machine in each line:
 ```
-export ROS_MASTER_URI=http://192.168.0.116:11311/
-export ROS_HOSTNAME=192.168.0.116
-export ROS_IP=192.168.0.116
+export ROS_MASTER_URI=http://192.168.0.105:11311/
+export ROS_HOSTNAME=192.168.0.105
+export ROS_IP=192.168.0.105
 ```
 Afterwards, run
 ```
@@ -64,7 +64,7 @@ First, build [autonomous_driving_src](https://github.com/Roboy/autonomous_drivin
 
 Before launching `rviz` on remote, run the following lines of code replacing `HOST_IP` with the actual IP adress of your host machine and `REMOTE_IP` with the actual IP adress of your remote machine:
 ```
-export ROS_MASTER_URI=http://192.168.0.116:11311/
+export ROS_MASTER_URI=http://192.168.0.105:11311/
 export ROS_HOSTNAME=REMOTE_IP
 export ROS_IP=REMOTE_IP
 
@@ -95,9 +95,9 @@ Download the data from [here](https://drive.google.com/drive/folders/1AyYO9wN8ol
 ### Network Settings
 Before starting your code in docker, run the following lines of code replacing `DOCKER_IP` with the actual IP adress of your docker machine in each line:
 ```
-export ROS_MASTER_URI=http://192.168.0.116:11311/
-export ROS_HOSTNAME=192.168.0.116
-export ROS_IP=192.168.0.116
+export ROS_MASTER_URI=http://192.168.0.105:11311/
+export ROS_HOSTNAME=192.168.0.105
+export ROS_IP=192.168.0.105
 ```
 ### Start Localization
 ```
@@ -108,9 +108,9 @@ roslaunch cartographer_ros roboy_localization.launch load_state_filename:=${HOME
 ## 5. Simulate input
 On host, open a new terminal and set network accordingly
 ```
-export ROS_MASTER_URI=http://192.168.0.116:11311/
-export ROS_HOSTNAME=192.168.0.119
-export ROS_IP=192.168.0.119
+export ROS_MASTER_URI=http://192.168.0.105:11311/
+export ROS_HOSTNAME=192.168.0.XXX
+export ROS_IP=192.168.0.XXX
 ```
 run i.e.
 ```
