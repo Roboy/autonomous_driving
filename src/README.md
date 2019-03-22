@@ -30,9 +30,3 @@ If you want to add a 3D camera to the setup. Could provide additional informatio
 
 Follow *Usage Instructions* in provided link for first steps.
 
-@jonaskerber, please add your modules:
-## Obstacle_Detector
-[Obstacle Detector](https://github.com/tysik/obstacle_detector) is a ROS package for 2D obstacle detection based on laser range data.
-
-This could be a possible extension for a more complex obstacle avoidance. At the current stage the local planner of the ROS navigation stack can subscribe to laserscan data to adapt the local plan to drive around obstacles.
-
