@@ -1,9 +1,18 @@
 [submodule "autonomous_driving_src"]
 	path = autonomous_driving_src
 	url = https://github.com/Roboy/autonomous_driving_src.git
-[submodule "calibration/RADOCCToolbox"]
-	path = calibration/RADOCCToolbox
-	url = https://github.com/SubMishMar/RADOCCToolbox.git
-[submodule "calibration/RADLOCC"]
-	path = calibration/RADLOCC
+[submodule "src/cartographer_ros"]
+	path = src/cartographer_ros
+	url = https://github.com/Roboy/cartographer_ros/
+[submodule "src/calibration/RADLOCC"]
+	path = src/calibration/RADLOCC
 	url = https://github.com/akas9185/RADLOCC.git
+[submodule "src/calibration/RADOCCToolbox"]
+	path = src/calibration/RADOCCToolbox
+	url = https://github.com/SubMishMar/RADOCCToolbox.git
+[submodule "src/calibration/radlocc_calibration"]
+	path = src/calibration/radlocc_calibration
+	url = https://github.com/bernardomig/radlocc_calibration.git
+[submodule "src/realsense"]
+	path = src/realsense
+	url = https://github.com/intel-ros/realsense.git

@@ -2,7 +2,7 @@
 
 This is [Roboy's](https://roboy.org) [Autonomous Driving Team's (update hyperlink when website is up)](https://roboy.org/team/) main repository. Setup and usage is shown in the following sections. We have a [wiki](https://github.com/Roboy/autonomous_driving/wiki) where we go into detail about everything we did.
 
-Members of [Roboy](https://github.com/roboy) can find additional information about this project on our [Confluence page](https://devanthro.atlassian.net/wiki/spaces/WS1819/pages/332071090/Autonomous+Driving). 
+To start, please go to our [Wiki page](https://github.com/Roboy/autonomous_driving/wiki). Members of [Roboy](https://github.com/roboy) can find additional information about this project on our [Confluence page](https://devanthro.atlassian.net/wiki/spaces/WS1819/pages/332071090/Autonomous+Driving). 
 
 # Prerequisites
 You will require [ROS Kinetic](http://wiki.ros.org/kinetic) and [Catkin tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) for the use of this repository.
@@ -28,7 +28,9 @@ After the stated packages have been build, connect the LIDAR to an appropriate p
 Hint for VM users: This guide was written based on experiences from a USB-C only MacBook running Ubuntu 16.04 in VMware Fusion. When connecting ethernet through a ethernet to USB-C adapter, mount the adapter to macOS, such that the connection is shown in the System Preferences of your host machine. Then, disconnect from any WiFi connections and the VM will switch to the wired connection. This lead to a plug-and-play setup of the LIDAR which can be double checked through calling the IP adress in a browser. 
 
 #### Realsense
-@jonas-kerber
+To check if Intel Realsense D435 was connected correctly check via ```lsusb``` to see if a device with 'Intel' in it's name shows up. There could be problems if you use USB adapters and/or virtual machines, otherwise it should work plug and play.
+
+For instructions on how to use it in ROS check out the [official instructions](https://github.com/intel-ros/realsense).
 
 #### Lidar-Camera extrinsic calibration
 Extrinsic calibration provides the relative translation and rotation between camera and lidar.

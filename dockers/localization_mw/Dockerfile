@@ -4,20 +4,17 @@ WORKDIR /home/ros
 
 # Install system libraries
 RUN apt-get update && \
-    apt-get install -y sudo ninja-build python-catkin-tools python-wstool python-rosdep ros-kinetic-catkin ros-kinetic-map-server ros-kinetic-sick-scan ros-kinetic-abseil-cpp ros-kinetic-geometry2 libarmadillo-dev ros-kinetic-moveit-msgs
+    apt-get install -y sudo ninja-build python-catkin-tools python-wstool python-rosdep ros-kinetic-abseil-cpp ros-kinetic-catkin ros-kinetic-map-server ros-kinetic-geometry2 ros-kinetic-moveit-msgs net-tools
 
 # Initialize ROS
 RUN /bin/bash -c 'source /opt/ros/kinetic/setup.bash'
 
 # Copy autonomous driving code
-RUN git clone https://github.com/Roboy/autonomous_driving_src.git src
 WORKDIR /home/ros/src
+RUN git clone https://github.com/Roboy/cartographer_ros.git
+#WORKDIR /home/ros/src
 
-RUN git checkout docker && \
-    git submodule init && \
-    git submodule update
-
-RUN cd /home/ros/src/cartographer_ros && \
+RUN cd cartographer_ros/ && \
     git checkout roboy
 
 # Compile cartographer
@@ -35,7 +32,16 @@ RUN catkin config --extend /opt/ros/kinetic
 RUN catkin build
 RUN /bin/bash -c 'source devel/setup.bash'
 
-# Configure ROS master
-RUN export ROS_MASTER_URI=0.0.0.0:11311
+# Update Cartographer_ROS roboy
+RUN cd src/cartographer_ros/ && \
+    git checkout roboy && \
+    git pull
+RUN /bin/bash -c 'source devel/setup.bash'
 
-CMD roscore 
+# SET IPs
+RUN export ROS_MASTER_URI=http://192.168.0.105:11311/ && \
+    export ROS_HOSTNAME=192.168.0.105 && \
+    export ROS_IP=192.168.0.105
+
+# start pure localization
+CMD roslaunch cartographer_ros roboy_mw_localization.launch
